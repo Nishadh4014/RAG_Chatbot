@@ -11,7 +11,7 @@ from pinecone import Pinecone, ServerlessSpec
 
 pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
 pc.create_index(
-    name='test2',
+    name='test4',
     dimension=1536,
     metric='cosine',
     spec=ServerlessSpec(
@@ -20,7 +20,7 @@ pc.create_index(
     )
 )
 
-loader = PyPDFLoader("C:/Users/BAPS/Downloads/5_6199243000615277960.pdf")
+loader = PyPDFLoader("C:/Users/BAPS/Downloads/ilovepdf_merged.pdf")
 document = loader.load()
 
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
